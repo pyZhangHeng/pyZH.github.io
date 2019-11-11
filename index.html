@@ -68,6 +68,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-rabbitMQ" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/11/rabbitMQ/" class="article-date">
+  <time datetime="2019-11-11T03:46:51.000Z" itemprop="datePublished">2019-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/11/rabbitMQ/">rabbitMQ</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>复习rabbitMQ</p>
+<p>阿里云centos7服务器安装</p>
+<p>1： 安装erlang环境(rabbitMQ使用erlang开发)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 中间会有提示 输入 y</span><br><span class="line">yum install erlang</span><br></pre></td></tr></table></figure>
+
+<p>2: 安装rabbitmq rpm包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 第一步</span><br><span class="line">wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.5.0/rabbitmq-server-3.5.0-1.noarch.rpm</span><br><span class="line"># 第二步</span><br><span class="line">rpm -ivh rabbitmq-server-3.5.0-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>3: 启动rabbitMq服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#以服务的方式启动</span><br><span class="line">service rabbitmq-server start</span><br></pre></td></tr></table></figure>
+<p>4: 启用维护插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#启用维护插件：</span><br><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br><span class="line"></span><br><span class="line">#重启rabbitmq</span><br><span class="line">service rabbitmq-server restart</span><br><span class="line"></span><br><span class="line">#登录问题 默认账号密码只能本地登录,所以出现以下命令(创建一个新用户)</span><br><span class="line"># 账号 admin  密码 123456</span><br><span class="line">rabbitmqctl add_user admin 123456  </span><br><span class="line">  </span><br><span class="line">#查询用户</span><br><span class="line">rabbitmqctl list_users</span><br><span class="line"></span><br><span class="line">#添加权限</span><br><span class="line">rabbitmqctl set_user_tags admin administrator</span><br><span class="line"></span><br><span class="line">#查询用户</span><br><span class="line">rabbitmqctl list_users</span><br></pre></td></tr></table></figure>
+
+<p>5: 登陆服务器RabbitMQ 可视化控制台(安全组端口号记得配置15672)<br><a href="http://ip:15672/" target="_blank" rel="noopener">http://ip:15672/</a></p>
+<p>6: 程序连接需要设置新用户的访问权限(本次使用可视化平台)</p>
+<ul>
+<li>点击admin</li>
+<li>点击virtual Hosts</li>
+<li>点击 “ / “ 进入 (可以自己创建)</li>
+<li>Permissions &gt; Set permission 选择创建的用户名称</li>
+<li>点击 Set permission 按钮</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/child/2019/11/11/rabbitMQ/" data-id="ck2tzukyi000044vi463ofpqy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js-jsq" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/08/js-jsq/" class="article-date">
@@ -95,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/child/2019/11/08/js-jsq/" data-id="ck2plfn5x00001gvifmw7bb6s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/child/2019/11/08/js-jsq/" data-id="ck2tzukyr000244vid9dfbzpf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/child/2019/11/04/hello-world/" data-id="ck2plfn6500011gvie0z314pu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/child/2019/11/04/hello-world/" data-id="ck2tzukyp000144vigxjs32a0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,6 +241,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/11/rabbitMQ/">rabbitMQ</a>
+          </li>
         
           <li>
             <a href="/2019/11/08/js-jsq/">简单的计数器</a>

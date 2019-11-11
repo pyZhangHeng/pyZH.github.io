@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>rabbitMQ | ZhangHeng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="复习rabbitMQ 阿里云centos7服务器安装 1： 安装erlang环境(rabbitMQ使用erlang开发) 12# 中间会有提示 输入 yyum install erlang  2: 安装rabbitmq rpm包 1234# 第一步wget http:&#x2F;&#x2F;www.rabbitmq.com&#x2F;releases&#x2F;rabbitmq-server&#x2F;v3.5.0&#x2F;rabbitmq-server">
+<meta name="keywords" content="网站的关键词。使用半角逗号 , 分隔多个关键词。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rabbitMQ">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;child&#x2F;2019&#x2F;11&#x2F;11&#x2F;rabbitMQ&#x2F;index.html">
+<meta property="og:site_name" content="ZhangHeng">
+<meta property="og:description" content="复习rabbitMQ 阿里云centos7服务器安装 1： 安装erlang环境(rabbitMQ使用erlang开发) 12# 中间会有提示 输入 yyum install erlang  2: 安装rabbitmq rpm包 1234# 第一步wget http:&#x2F;&#x2F;www.rabbitmq.com&#x2F;releases&#x2F;rabbitmq-server&#x2F;v3.5.0&#x2F;rabbitmq-server">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-11T06:13:12.595Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="ZhangHeng" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ZhangHeng</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">副标题</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com/child"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-rabbitMQ" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/11/rabbitMQ/" class="article-date">
+  <time datetime="2019-11-11T03:46:51.000Z" itemprop="datePublished">2019-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      rabbitMQ
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>复习rabbitMQ</p>
+<p>阿里云centos7服务器安装</p>
+<p>1： 安装erlang环境(rabbitMQ使用erlang开发)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 中间会有提示 输入 y</span><br><span class="line">yum install erlang</span><br></pre></td></tr></table></figure>
+
+<p>2: 安装rabbitmq rpm包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 第一步</span><br><span class="line">wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.5.0/rabbitmq-server-3.5.0-1.noarch.rpm</span><br><span class="line"># 第二步</span><br><span class="line">rpm -ivh rabbitmq-server-3.5.0-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>3: 启动rabbitMq服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#以服务的方式启动</span><br><span class="line">service rabbitmq-server start</span><br></pre></td></tr></table></figure>
+<p>4: 启用维护插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#启用维护插件：</span><br><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br><span class="line"></span><br><span class="line">#重启rabbitmq</span><br><span class="line">service rabbitmq-server restart</span><br><span class="line"></span><br><span class="line">#登录问题 默认账号密码只能本地登录,所以出现以下命令(创建一个新用户)</span><br><span class="line"># 账号 admin  密码 123456</span><br><span class="line">rabbitmqctl add_user admin 123456  </span><br><span class="line">  </span><br><span class="line">#查询用户</span><br><span class="line">rabbitmqctl list_users</span><br><span class="line"></span><br><span class="line">#添加权限</span><br><span class="line">rabbitmqctl set_user_tags admin administrator</span><br><span class="line"></span><br><span class="line">#查询用户</span><br><span class="line">rabbitmqctl list_users</span><br></pre></td></tr></table></figure>
+
+<p>5: 登陆服务器RabbitMQ 可视化控制台(安全组端口号记得配置15672)<br><a href="http://ip:15672/" target="_blank" rel="noopener">http://ip:15672/</a></p>
+<p>6: 程序连接需要设置新用户的访问权限(本次使用可视化平台)</p>
+<ul>
+<li>点击admin</li>
+<li>点击virtual Hosts</li>
+<li>点击 “ / “ 进入 (可以自己创建)</li>
+<li>Permissions &gt; Set permission 选择创建的用户名称</li>
+<li>点击 Set permission 按钮</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/child/2019/11/11/rabbitMQ/" data-id="ck2tzukyi000044vi463ofpqy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/08/js-jsq/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">简单的计数器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/11/rabbitMQ/">rabbitMQ</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/08/js-jsq/">简单的计数器</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 张恒<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
